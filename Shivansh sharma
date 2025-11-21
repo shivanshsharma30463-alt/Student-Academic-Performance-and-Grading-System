@@ -1,0 +1,30 @@
+student_name = input("Enter student name: ")
+
+marks = []
+for i in range(5):
+    m = int(input(f"Enter marks for subject {i+1} (out of 100): "))
+    marks.append(m)
+
+total = sum(marks)
+percentage = total * 100 / 500
+
+if percentage >= 90:
+    grade = "A+"
+elif percentage >= 80:
+    grade = "A"
+elif percentage >= 70:
+    grade = "B"
+elif percentage >= 60:
+    grade = "C"
+elif percentage >= 50:
+    grade = "D"
+else:
+    grade = "F"
+
+print("\n--- Student Result ---")
+print("Name       :", student_name)
+for i in range(5):
+    print(f"Subject {i+1}: {marks[i]}")
+print("Total      :", total, "/ 500")
+print(f"Percentage : {percentage:.2f}%")
+print("Grade      :", grade)
